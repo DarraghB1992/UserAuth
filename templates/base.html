@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Simple Site</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact </a></li>
+            <li><a href="{% url 'register' %}">Register </a></li>
+            <li><a href="{% url 'login' %}">Login </a></li>
+            <li><a href="{% url 'logout' %}">Logout </a></li>
+        </ul>
+        <h3><span class="fui-settings-16 muted">Social Entrepreneurship</span></h3>
+    </div>
+    <hr>
+
+    {% if messages %}
+
+        <div class="alert alert-sucess">
+            <div class="messages">
+                {% for message in messages %}
+
+                    {{ message }}
+
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+    <hr>
+
+    <div class="footer">
+        <p>Made by Darragh</p>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
