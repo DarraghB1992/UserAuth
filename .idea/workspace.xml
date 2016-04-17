@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="28ad9bcb-c2b8-4418-a099-12ffe446dad2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/models.py" afterPath="$PROJECT_DIR$/accounts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
     </list>
     <ignored path="UserAuth.iws" />
     <ignored path=".idea/workspace.xml" />
