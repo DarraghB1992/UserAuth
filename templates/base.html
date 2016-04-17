@@ -18,9 +18,14 @@
             <li><a href="/">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact </a></li>
-            <li><a href="{% url 'register' %}">Register </a></li>
-            <li><a href="{% url 'login' %}">Login </a></li>
-            <li><a href="{% url 'logout' %}">Logout </a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile </a></li>
+                <li><a href="{% url 'logout' %}">Logout </a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">Register </a></li>
+                <li><a href="{% url 'login' %}">Login </a></li>
+            {% endif %}
         </ul>
         <h3><span class="fui-settings-16 muted">Social Entrepreneurship</span></h3>
     </div>
@@ -28,7 +33,7 @@
 
     {% if messages %}
 
-        <div class="alert alert-sucess">
+        <div class="alert alert-success">
             <div class="messages">
                 {% for message in messages %}
 
@@ -38,6 +43,7 @@
             </div>
         </div>
     {% endif %}
+
     <div class="container">
         {% block content %}
         {% endblock %}

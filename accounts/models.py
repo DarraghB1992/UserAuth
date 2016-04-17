@@ -19,5 +19,6 @@ class AccountUserManager(UserManager):
 
         return user
 
+
 class User(AbstractUser):
     objects = AccountUserManager()
